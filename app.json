@@ -1,0 +1,49 @@
+{
+    "pages": [
+        "page/index/index",
+        "page/punchteam/index",
+        "page/plaza/index",
+        "page/self/index"
+    ],
+    "window": {
+        "backgroundTextStyle": "light",
+        "navigationBarBackgroundColor": "#00A65A",
+        "navigationBarTitleText": "木棉小镇",
+        "navigationBarTextStyle": "white",
+        "backgroundColor": "#F8F8F8"
+    },
+    "tabBar": {
+        "color": "#7A7E83",
+        "selectedColor": "#3cc51f",
+        "borderStyle": "black",
+        "backgroundColor": "#ffffff",
+        "list": [{
+            "pagePath": "page/index/index",
+            "iconPath": "image/home.png",
+            "selectedIconPath": "image/home_se.png",
+            "text": "首页"
+        }, {
+            "pagePath": "page/punchteam/index",
+            "iconPath": "image/punchteam.png",
+            "selectedIconPath": "image/punchteam_se.png",
+            "text": "打卡小组"
+        }, {
+            "pagePath": "page/plaza/index",
+            "iconPath": "image/plaza.png",
+            "selectedIconPath": "image/plaza_se.png",
+            "text": "广场"
+        }, {
+            "pagePath": "page/self/index",
+            "iconPath": "image/self.png",
+            "selectedIconPath": "image/self_se.png",
+            "text": "我的"
+        }]
+    },
+    "networkTimeout": {
+        "request": 10000,
+        "connectSocket": 10000,
+        "uploadFile": 10000,
+        "downloadFile": 10000
+    },
+    "debug": false
+}

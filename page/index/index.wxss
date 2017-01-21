@@ -1,21 +1,109 @@
 /**index.wxss**/
-.userinfo {
+/* top swiper start*/
+swiper {
+  height:350rpx;
+  width: 100%;
+  position: fixed;
+  z-index:10;
+}
+
+swiper-item image {
+  height:350rpx;
+  width:100%;
+}
+
+/* top swiper end*/
+
+
+/* middle tab start*/
+.middle-tabs {
+  position: fixed;
+  top:350rpx;
+  z-index: 10;
+  height:150rpx;
+  width:100%;
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  border-bottom:1px solid #d7d7d7;
+  padding-top: 20rpx;
+  background:#F8F8F8;
 }
 
-.userinfo-avatar {
-  width: 128rpx;
-  height: 128rpx;
-  margin: 20rpx;
-  border-radius: 50%;
+.middle-tabs .tab{
+  flex:1;
+  height:100%;
+  font-size: 9pt;
+}
+.middle-tabs .tab text {
+  position: relative;
+  top:10rpx;
 }
 
-.userinfo-nickname {
-  color: #aaa;
+.middle-tabs .tab image{
+  width:80rpx;
+  height:80rpx;
 }
 
-.usermotto {
-  margin-top: 200px;
+.middle-tabs .tab image,.middle-tabs .tab text{
+  display: block;
+  text-align: center;
+  margin:0 auto;
 }
+
+/* middle tab end*/
+
+/* hotactive list start*/
+scroll-view {
+  margin-top: 520rpx;
+  z-index: 9;
+}
+.hotActive .hotActive-name{
+  text-align: center;
+  width: 100%;
+  display: block;
+  padding:20rpx 0;
+}
+
+.hotActive-item {
+  height:140rpx;
+  padding:16rpx 0;
+  margin:0 16rpx;
+  display: flex;
+  border-bottom: 1px solid #d7d7d7;
+}
+
+.hotActive-item-l,.hotActive-item-r {
+  height:140rpx;
+  display: inline-block;
+}
+
+.hotActive-item-r {
+  margin-left: 10rpx;
+}
+
+.hotActive-item image {
+  height:140rpx;
+  width:220rpx;
+}
+
+.hotActive-item-r .header {
+  font-size: 11pt;
+  font-weight: 600;
+}
+
+.hotActive-item-r .cnt {
+  font-size: 10pt;  
+  position:relative;
+  top:16rpx;
+}
+
+.hotActive-item-r .cnt text {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+}
+.fl-right {
+  float: right;
+}
+/* hotactive list end*/
+

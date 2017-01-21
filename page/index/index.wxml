@@ -1,10 +1,43 @@
+
 <!--index.wxml-->
 <view class="container">
-  <view  bindtap="bindViewTap" class="userinfo">
-    <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
-    <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+  <swiper indicator-dots="{{swiperConfig.indicatorDots}}" autoplay="{{swiperConfig.autoplay}}" interval="{{swiperConfig.interval}}" duration="{{swiperConfig.duration}}" circular="{{swiperConfig.circular}}">
+    <block wx:for="{{swiperData}}" wx:key="{{item.swiperId}}">
+      <swiper-item bindtap="goto" wx:if="{{swiperConfig.supportGoto}}">
+        <image src="{{item.swiperImageUrl}}" class="slide-image" data-method="{{item.gotoMethod}}" data-url="{{item.gotoUrl}}" data-name="{{item.swiperName}}" data-id="{{item.swiperId}}" />
+      </swiper-item>
+      <swiper-item wx:if="{{!swiperConfig.supportGoto}}">
+        <image src="{{item.swiperImageUrl}}" class="slide-image" />
+      </swiper-item>
+    </block>
+  </swiper>
+  <view class="middle-tabs">
+    <view class="tab">
+      <image src="../../image/home.png"></image>
+      <text>我的小组</text>
+    </view>
+    <view class="tab">
+      <image src="../../image/home.png"></image>
+      <text>我的课程</text>
+    </view>
   </view>
-  <view class="usermotto">
-    <text class="user-motto">{{motto}}</text>
-  </view>
+  <scroll-view scroll-y="true" bindscrolltoupper="upper" bindscrolltolower="lower" scroll-into-view="{{toView}}" scroll-top="400" class="hotActive">
+    <text class="hotActive-name">热门推荐</text>
+    <block wx:for="{{listData}}" wx:key="{{item.topicTimeStamp}}">
+      <view class="hotActive-item">
+        <view class="hotActive-item-l">
+          <image src="{{item.topicImageUrl}}"></image>
+        </view>
+        <view class="hotActive-item-r">
+          <view class="header">
+            <text>{{item.topicName}}</text>
+            <text class="fl-right">类型：{{item.topicType}}</text>
+          </view>
+          <view class="cnt">
+            <text>{{item.topicDescription}}</text>
+          </view>
+        </view>
+      </view>
+    </block>
+  </scroll-view>
 </view>

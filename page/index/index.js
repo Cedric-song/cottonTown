@@ -23,7 +23,8 @@ const swiperData = [
     ]
 
 
-const listData = [{
+const listData = [
+    {
       "topicId": "1",
       "topicName": "10天早起计划",
       "topicType": "打卡小组",
@@ -94,8 +95,20 @@ const listData = [{
       "topicDescription": "如果你还无法简洁的表达你的想法，那只说明你还不够了解它如果你还无法简洁的表达你的想法，那只说明你还不够了解它",
       "topicImageUrl": "http://img02.tooopen.com/images/20150928/tooopen_sy_143912755726.jpg",
       "topicTimeStamp": 1484892814516
-    }]
+    }
+]
 
+
+const toolbar = [
+    {
+      imageUrl: "../../image/home.png",
+      name: "我的小组"
+    }, 
+    {
+      imageUrl: "../../image/home.png",
+      name: "我的课程"
+    }   
+]
 Page({
   data: {
     swiperData: swiperData,
@@ -107,8 +120,8 @@ Page({
       duration: 1000,
       supportGoto: false
     },
-    
-    listData: listData
+    listData: listData,
+    toolbar: toolbar
   },
   goto (e) {
     const data = e.target.dataset

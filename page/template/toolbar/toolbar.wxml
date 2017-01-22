@@ -1,0 +1,6 @@
+ <template name="toolbar">
+    <navigator url="{{url}}" open-type="{{gotoMethod}}" class="tab">
+      <image src="{{imageUrl}}"></image>
+      <text>{{name}}</text>
+    </navigator>
+ </template>

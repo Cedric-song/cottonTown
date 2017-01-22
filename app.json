@@ -1,7 +1,10 @@
 {
     "pages": [
         "page/index/index",
+
         "page/punchteam/index",
+        "page/punchteam/createTeam/createTeam",
+
         "page/plaza/index",
         "page/self/index"
     ],

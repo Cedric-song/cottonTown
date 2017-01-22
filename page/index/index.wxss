@@ -1,4 +1,5 @@
 /**index.wxss**/
+@import "../template/toolbar/toolbar.wxss";
 /* top swiper start*/
 swiper {
   height:350rpx;
@@ -13,43 +14,6 @@ swiper-item image {
 }
 
 /* top swiper end*/
-
-
-/* middle tab start*/
-.middle-tabs {
-  position: fixed;
-  top:350rpx;
-  z-index: 10;
-  height:150rpx;
-  width:100%;
-  display: flex;
-  border-bottom:1px solid #d7d7d7;
-  padding-top: 20rpx;
-  background:#F8F8F8;
-}
-
-.middle-tabs .tab{
-  flex:1;
-  height:100%;
-  font-size: 9pt;
-}
-.middle-tabs .tab text {
-  position: relative;
-  top:10rpx;
-}
-
-.middle-tabs .tab image{
-  width:80rpx;
-  height:80rpx;
-}
-
-.middle-tabs .tab image,.middle-tabs .tab text{
-  display: block;
-  text-align: center;
-  margin:0 auto;
-}
-
-/* middle tab end*/
 
 /* hotactive list start*/
 scroll-view {

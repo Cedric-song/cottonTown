@@ -1,0 +1,7 @@
+// createTeam.js
+
+Page({
+  data: {
+    
+  }
+})

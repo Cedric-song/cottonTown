@@ -1,21 +1,82 @@
-/**index.wxss**/
-.userinfo {
+/**punchteam.wxss**/
+@import "../template/toolbar/toolbar.wxss";
+
+/* hotactive list start*/
+scroll-view {
+  margin-top:188rpx;
+  z-index: 9;
+}
+.hotActive .hotActive-name{
+  text-align: center;
+  width: 100%;
+  display: block;
+  padding:20rpx 0;
+}
+
+.hotActive-item {
+  height:140rpx;
+  padding:16rpx 0;
+  margin:0 16rpx;
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  border-bottom: 1px solid #d7d7d7;
 }
 
-.userinfo-avatar {
-  width: 128rpx;
-  height: 128rpx;
-  margin: 20rpx;
-  border-radius: 50%;
+.hotActive-item-l,.hotActive-item-r {
+  height:140rpx;
+  display: inline-block;
 }
 
-.userinfo-nickname {
-  color: #aaa;
+.hotActive-item-r {
+  margin-left: 10rpx;
 }
 
-.usermotto {
-  margin-top: 200px;
+.hotActive-item image {
+  height:140rpx;
+  width:220rpx;
 }
+
+.hotActive-item-r .header {
+  font-size: 11pt;
+  font-weight: 600;
+}
+
+.hotActive-item-r .cnt ,.hotActive-item-r .ft{
+  font-size: 10pt;  
+  position:relative;
+  /*top:16rpx;*/
+}
+
+.hotActive-item-r .cnt text {
+/*  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;*/
+  overflow: hidden;
+}
+.fl-right {
+  float: right;
+}
+
+.ft .bg-start {
+  padding:10rpx;
+  background:#00a65a;
+}
+
+.ft .bg-ready {
+  padding:10rpx;
+  background:#3cc51f;
+}
+
+.ft .bg-end {
+  padding:10rpx;
+  background:#eee;
+}
+
+.ft {
+  position: relative;
+  bottom: -6rpx;
+}
+
+.cnt .ml {
+  margin-left: 10rpx;
+}
+/* hotactive list end*/

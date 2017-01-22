@@ -1,0 +1,8 @@
+<!--punchteam-->
+
+<view class="container">
+  <view class="f-input">
+    <text class="f-name">小组名称</text>
+    <input type="text" placeholder="30天早起" placeholder-class="pl-style" maxlength="-1" focus />
+  </view>
+</view>

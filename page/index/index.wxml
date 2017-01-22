@@ -1,3 +1,5 @@
+<import src="../template/toolbar/toolbar.wxml"/>
+
 
 <!--index.wxml-->
 <view class="container">
@@ -11,16 +13,14 @@
       </swiper-item>
     </block>
   </swiper>
-  <view class="middle-tabs">
-    <view class="tab">
-      <image src="../../image/home.png"></image>
-      <text>我的小组</text>
-    </view>
-    <view class="tab">
-      <image src="../../image/home.png"></image>
-      <text>我的课程</text>
-    </view>
+  
+  <view class="toolbars">
+    <block wx:for="{{toolbar}}">
+      <template is="toolbar" data="{{...item}}"></template>
+    </block>
   </view>
+  
+  
   <scroll-view scroll-y="true" bindscrolltoupper="upper" bindscrolltolower="lower" scroll-into-view="{{toView}}" scroll-top="400" class="hotActive">
     <text class="hotActive-name">热门推荐</text>
     <block wx:for="{{listData}}" wx:key="{{item.topicTimeStamp}}">

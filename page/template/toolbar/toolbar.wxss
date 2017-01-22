@@ -1,0 +1,38 @@
+/* middle tab start*/
+.toolbars.top {
+  top:0;
+}
+.toolbars {
+  position: fixed;
+  top:350rpx;
+  z-index: 10;
+  height:150rpx;
+  width:100%;
+  display: flex;
+  border-bottom:1px solid #d7d7d7;
+  padding-top: 20rpx;
+  background:#F8F8F8;
+}
+
+.toolbars .tab{
+  flex:1;
+  height:100%;
+  font-size: 9pt;
+}
+.toolbars .tab text {
+  position: relative;
+  top:10rpx;
+}
+
+.toolbars .tab image{
+  width:80rpx;
+  height:80rpx;
+}
+
+.toolbars .tab image,.toolbars .tab text{
+  display: block;
+  text-align: center;
+  margin:0 auto;
+}
+
+/* middle tab end*/

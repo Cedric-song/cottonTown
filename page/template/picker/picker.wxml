@@ -1,0 +1,15 @@
+<template name="picker">
+  <view class="f-picker">
+    <text class="f-picker-name">{{title}}</text>
+    <text class="f-picker-subname" wx:if="{{subtitle}}">{{subtitle}}</text>
+    <picker mode="{{mode}}" bindchange="{{bindChangeFunction}}" value="{{index}}" range="{{array}}" range-key="{{rangeKey}}" class="{{nodeClass}}">
+      <view class="picker" wx:if="{{mode=='selector'}}">
+      请选择： {{array[index][rangeKey]}}
+      </view>
+
+      <view class="picker" wx:if="{{mode=='date'}}">
+      请选择： {{date}}
+      </view>
+    </picker>
+  </view>
+</template>

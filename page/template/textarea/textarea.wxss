@@ -1,16 +1,28 @@
-.f-input {
+
+.f-textarea {
   font-size: 10pt;
   padding:20rpx 20rpx;
 }
 
-.f-name {
+.f-ta-name {
   font-weight: 600;
 }
 
-.f-input input {
+.f-textarea textarea {
   margin-top:10rpx;
   background-color: #fff;
   border:1px solid #888;
   padding:11rpx;
   color:#222;
+  width:auto;
+}
+
+
+/**/
+.ta-height-max {
+  height:160rpx;
+}
+
+.ta-height-min {
+  height:100rpx;
 }

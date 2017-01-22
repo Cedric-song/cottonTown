@@ -1,16 +1,24 @@
-.f-input {
+.f-picker {
   font-size: 10pt;
   padding:20rpx 20rpx;
 }
 
-.f-name {
+.f-picker-name {
   font-weight: 600;
 }
 
-.f-input input {
+.f-picker-subname {
+  font-size: 9pt;
+  color:#888;
+}
+
+.f-picker picker {
   margin-top:10rpx;
   background-color: #fff;
   border:1px solid #888;
   padding:11rpx;
   color:#222;
+  width:auto;
+  height:40rpx;
 }
+

@@ -1,0 +1,6 @@
+<template name="textarea">
+  <view class="f-textarea">
+    <text class="f-ta-name">{{title}}</text>
+    <textarea placeholder="{{placeholder}}" placeholder-class="{{placeholderClass}}" maxlength="{{maxlength}}" fouce="{{fouce}}" class="{{nodeClass}}"/>
+  </view>
+</template>

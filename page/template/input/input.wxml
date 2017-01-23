@@ -1,6 +1,7 @@
  <template name="input">
     <view class="f-input">
-      <text class="f-name">{{title}}</text>
+      <text class="f-input-name">{{title}}</text>
+      <text class="f-input-subname">{{subtitle}}</text>
       <input type="text" placeholder="{{placeholder}}" placeholder-class="{{placeholderClass}}" maxlength="{{maxlength}}" focus="{{fouce}}" />
     </view>
  </template>

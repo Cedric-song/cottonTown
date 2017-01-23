@@ -1,10 +1,10 @@
 const pickerConfig = {
+    name:"",
     mode:"selector",
-    index: "",
+    value: "",
     rangeKey: "",
     title: "",
-    bindChangeFunction: "",
-    array: []
+    bindChangeFunction: ""
 }
 
 module.exports = {

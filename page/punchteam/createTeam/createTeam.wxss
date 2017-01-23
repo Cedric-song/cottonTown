@@ -4,3 +4,25 @@
 @import "../../template/textarea/textarea.wxss";
 @import "../../template/picker/picker.wxss";
 
+.inline-picker {
+  display: inline-flex;
+}
+
+.inline-picker picker {
+  display: inline-block;
+  margin-left: 20rpx;
+  width: 200rpx;
+  height:40rpx;
+}
+
+.inline-picker .text {
+  position:relative;
+top:40rpx;
+font-size:10pt;
+font-weight:600;
+}
+
+
+button {
+  width:94%;
+}

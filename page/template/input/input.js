@@ -1,5 +1,6 @@
 const inputConfig = {
   title:"",
+  subtitle:"",
   placeholder:"",
   placeholderClass:"",
   maxlength:"-1",

@@ -3,8 +3,13 @@
   padding:20rpx 20rpx;
 }
 
-.f-name {
+.f-input-name {
   font-weight: 600;
+}
+
+.f-input-subname{
+  font-size: 9pt;
+  color:#888;
 }
 
 .f-input input {

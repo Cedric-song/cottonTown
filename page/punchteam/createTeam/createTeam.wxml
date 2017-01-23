@@ -9,6 +9,14 @@
   <template is="picker" data="{{...teamCategory}}"></template>
   <template is="textarea" data="{{...leaderIntro}}"></template>
   <template is="picker" data="{{...startTime}}"></template>
-  
-  
+
+  <view class="inline-picker">
+   <template is="picker" data="{{...frequentTime}}"></template>
+   <template is="picker" data="{{...frequentTimes}}"></template>
+   <text class="text">打卡</text>
+  </view>
+  <template is="picker" data="{{...duration}}"></template>
+  <template is="picker" data="{{...alertTime}}"></template>
+  <template is="input" data="{{...wechartId}}"></template>
+  <button type="primary" loading="{{loading}}" bindtap="submitForm">提交信息并创建小组</button>
 </view>

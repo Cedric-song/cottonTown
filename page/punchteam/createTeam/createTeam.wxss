@@ -17,12 +17,42 @@
 
 .inline-picker .text {
   position:relative;
-top:40rpx;
-font-size:10pt;
-font-weight:600;
+  top:40rpx;
+  font-size:10pt;
+  font-weight:600;
 }
 
 
 button {
   width:94%;
+}
+
+.selectors {
+display:flex;
+flex-wrap:wrap;
+text-align:center;
+margin-top:20rpx;
+flex-direction:row;
+justify-content:space-between;
+flex-wrap:wrap;
+align-items:baseline;
+
+}
+
+.selector {
+  background-color: #fff;
+  margin:20rpx;
+  padding:20rpx 0;
+  width:25%;
+  position:relative;
+}
+
+.selector input {
+  position:absolute;
+  background-color:#fff;
+  top:20rpx;
+}
+.selected {
+  background-color: #3cc51f;
+  color:#fff;
 }

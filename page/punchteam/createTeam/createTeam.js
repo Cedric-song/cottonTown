@@ -122,7 +122,42 @@ Page({
     duration: DURATION,
     wechartId: WECHART_ID,
     frequentTime: FREQUENT_TIME,
-    frequentTimes: FREQUENT_TIMES
+    frequentTimes: FREQUENT_TIMES,
+    selectorBlock:[
+      {
+        amount:"5",
+        selected:"selected",
+        writable:false
+      },
+      {
+        amount:"10",
+        selected:"",
+        writable:false
+      },
+      {
+        amount:"20",
+        selected:"",
+        writable:false
+      },
+      {
+        amount:"30",
+        selected:"",
+        writable:false
+      },
+      {
+        amount:"50",
+        selected:"",
+        writable:false
+      },
+      {
+        amount:"_",
+        selected:"",
+        writable:true
+      }
+    ],
+    selectorBlockConfig:{
+      current_index:0,
+    }
 
   },
   changeTeamCategory(e) {
@@ -153,6 +188,20 @@ Page({
   changeFrequentTimes(e) {
     this.setData({
       "frequentTimes.index": e.detail.value
+    })
+  },
+  changeAmount(e) {
+
+    this.setData({
+      ["selectorBlock[" + this.data.selectorBlockConfig.current_index + "].selected"]:""
+    })
+
+    this.setData({
+      ["selectorBlock[" + e.target.dataset.index + "].selected"]:"selected"
+    })
+
+    this.setData({
+      "selectorBlockConfig.current_index":e.target.dataset.index
     })
   }
 })

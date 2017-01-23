@@ -1,22 +1,36 @@
-<!--punchteam-->
-<import src="../../template/input/input.wxml"/>
-<import src="../../template/textarea/textarea.wxml"/>
-<import src="../../template/picker/picker.wxml"/>
 
+<!--punchteam-->
+<import src="../../template/input/input.wxml" />
+<import src="../../template/textarea/textarea.wxml" />
+<import src="../../template/picker/picker.wxml" />
 <view class="container">
   <template is="input" data="{{...teamName}}"></template>
   <template is="textarea" data="{{...teamIntro}}"></template>
   <template is="picker" data="{{...teamCategory}}"></template>
   <template is="textarea" data="{{...leaderIntro}}"></template>
   <template is="picker" data="{{...startTime}}"></template>
+    <view class="selectors" bindtap="changeAmount">
+      <block wx:for="{{selectorBlock}}">
+        <block wx:if="{{item.writable}}">
+          <view data-index="{{index}}" data-selected="{{item.selected}}" class="selector {{item.selected}}">{{item.amount}}
+            <input placeholder-style="color:#222;font-weight:550;" placeholder="自定义" />
+          </view>
+            
+        </block>
+        <block wx:else>
+          <view data-index="{{index}}" data-selected="{{item.selected}}" class="selector {{item.selected}}">{{item.amount}}
+          </view>
+        </block>
+      </block>
+    </view>
 
-  <view class="inline-picker">
-   <template is="picker" data="{{...frequentTime}}"></template>
-   <template is="picker" data="{{...frequentTimes}}"></template>
-   <text class="text">打卡</text>
+    <view class="inline-picker">
+      <template is="picker" data="{{...frequentTime}}"></template>
+      <template is="picker" data="{{...frequentTimes}}"></template>
+      <text class="text">打卡</text>
+    </view>
+    <template is="picker" data="{{...duration}}"></template>
+    <template is="picker" data="{{...alertTime}}"></template>
+    <template is="input" data="{{...wechartId}}"></template>
+    <button type="primary" loading="{{loading}}" bindtap="submitForm">提交信息并创建小组</button>
   </view>
-  <template is="picker" data="{{...duration}}"></template>
-  <template is="picker" data="{{...alertTime}}"></template>
-  <template is="input" data="{{...wechartId}}"></template>
-  <button type="primary" loading="{{loading}}" bindtap="submitForm">提交信息并创建小组</button>
-</view>

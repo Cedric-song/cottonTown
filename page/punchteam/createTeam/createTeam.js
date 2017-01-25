@@ -2,6 +2,9 @@
 const input = require('../../template/input/input.js').inputConfig
 const textarea = require('../../template/textarea/textarea.js').textareaConfig
 const picker = require('../../template/picker/picker.js').pickerConfig
+const getArr = require('../../../util/createList.js').getArr
+const formatTime = require('../../../util/util.js').formatTime
+const convertTime = require('../../../util/util.js').convertTime
 
 const TEAM_NAME = Object.assign({}, input, {
   title: "小组名称",
@@ -17,6 +20,7 @@ const TEAM_CATEGORY = Object.assign({}, picker, {
   rangeKey: "name",
   title: "小组类别",
   bindChangeFunction: "changeTeamCategory",
+  default: "请选择",
   array: [
     {
       name: "个人发展",
@@ -62,11 +66,11 @@ const START_TIME = Object.assign({}, picker, {
   mode: "date",
   value: "",
   title: "期望开始时间",
-  subtitle: "（2017年年01月01日0点截止报名并正式开始）",
-  bindChangeFunction: "changeDate"
+  subtitle: "（" + formatTime(new Date()).replace('/','年').replace('/','月').split(" ")[0].concat('日') + "0点截止报名并正式开始）",
+  bindChangeFunction: "changeDate",
+  default: formatTime(new Date()).replace('/','-').replace('/','-').split(" ")[0],
+  value: formatTime(new Date()).replace('/','-').replace('/','-').split(" ")[0]
 })
-
-
 
 
 const FREQUENT_TIME = Object.assign({}, picker, {
@@ -74,7 +78,9 @@ const FREQUENT_TIME = Object.assign({}, picker, {
   rangeKey: "name",
   title: "每",
   bindChangeFunction: "changeFrequentTime",
-  array:getArr(8,"天")
+  array:getArr(8,"天"),
+  default:"1天",
+  value:"1天"
 })
 
 
@@ -84,17 +90,20 @@ const FREQUENT_TIMES = Object.assign({}, picker, {
   rangeKey: "name",
   title: "至少",
   bindChangeFunction: "changeFrequentTimes",
-  array:getArr(6,"次")
+  array:getArr(6,"次"),
+  default: "1次",
+  value: "1次"
 })
-
 
 const DURATION = Object.assign({}, picker, {
   name: "duration",
   rangeKey: "name",
   title: "进行时间",
-  subtitle:"（2017年01月01日0点小组结束）",
+  subtitle:"（" + convertTime(START_TIME.value,"7").replace("/","年").replace("/","月").concat("日") + "0点小组结束）",
   bindChangeFunction: "changeDuration",
-  array:getArr(31,"天")
+  array:getArr(31,"天"),
+  default: "7天",
+  value: "7天"
 })
 
 const ALERT_TIME = Object.assign({}, picker, {
@@ -102,7 +111,8 @@ const ALERT_TIME = Object.assign({}, picker, {
   value: "",
   title: "提醒时间",
   subtitle: "（组员每天会在这个时间收到打卡提醒）",
-  bindChangeFunction: "changeAlertTime"
+  bindChangeFunction: "changeAlertTime",
+  default:"09:00"
 })
 
 const WECHART_ID = Object.assign({}, input, {
@@ -166,13 +176,19 @@ Page({
     })
   },
   changeDuration(e) {
+    
     this.setData({
-      "duration.index": e.detail.value
+      "duration.index": e.detail.value,
+      "duration.value": e.detail.value,
+      "duration.subtitle": "（" + convertTime(this.data.startTime.value,this.data.duration.value).replace("/","年").replace("/","月").concat("日") + "0点小组结束）"
     })
+
+  // subtitle:"（" + convertTime(START_TIME.value,"7").replace("/","年").replace("/","月").concat("日") + "0点小组结束）",
   },
   changeDate(e) {
     this.setData({
-      "startTime.value": e.detail.value
+      "startTime.value": e.detail.value,
+      "startTime.subtitle":  "（" + e.detail.value.replace('-','年').replace('-','月').concat('日') + "0点截止报名并正式开始）"
     })
   },
   changeAlertTime(e) {
@@ -207,13 +223,4 @@ Page({
 })
 
 
-function getArr(maxVal,valName){
-  let arr = []
-  for (var i=1;i<maxVal;i++){
-    arr.push({
-      name: i + valName,
-      value: i.toString()
-    })
-  }
-  return arr
-}
+

@@ -3,7 +3,7 @@ function getArr(maxVal,valName){
   for (var i=1;i<maxVal;i++){
     arr.push({
       name: i + valName,
-      value: i.toString()
+      value: (i-1).toString()
     })
   }
   return arr

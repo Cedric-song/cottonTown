@@ -79,8 +79,8 @@ const FREQUENT_TIME = Object.assign({}, picker, {
   title: "每",
   bindChangeFunction: "changeFrequentTime",
   array:getArr(8,"天"),
-  default:"1天",
-  value:"1天"
+  default: "1天",
+  value: "1天"
 })
 
 
@@ -176,19 +176,25 @@ Page({
     })
   },
   changeDuration(e) {
-    
     this.setData({
       "duration.index": e.detail.value,
-      "duration.value": e.detail.value,
-      "duration.subtitle": "（" + convertTime(this.data.startTime.value,this.data.duration.value).replace("/","年").replace("/","月").concat("日") + "0点小组结束）"
+      "duration.value": this.data.duration.array[e.detail.value].name
     })
 
-  // subtitle:"（" + convertTime(START_TIME.value,"7").replace("/","年").replace("/","月").concat("日") + "0点小组结束）",
+    this.setData({
+       "duration.subtitle": "（" + convertTime(this.data.startTime.value,this.data.duration.value).replace("/","年").replace("/","月").concat("日") + "0点小组结束）"
+    })
+   
+
   },
   changeDate(e) {
     this.setData({
       "startTime.value": e.detail.value,
       "startTime.subtitle":  "（" + e.detail.value.replace('-','年').replace('-','月').concat('日') + "0点截止报名并正式开始）"
+    })
+
+    this.setData({
+      "duration.subtitle": "（" + convertTime(this.data.startTime.value,this.data.duration.value).replace("/","年").replace("/","月").concat("日") + "0点小组结束）"
     })
   },
   changeAlertTime(e) {

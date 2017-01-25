@@ -91,8 +91,7 @@ const FREQUENT_TIMES = Object.assign({}, picker, {
   title: "至少",
   bindChangeFunction: "changeFrequentTimes",
   array:getArr(6,"次"),
-  default: "1次",
-  // value: "1次"
+  default: "1次"
 })
 
 const DURATION = Object.assign({}, picker, {
@@ -102,8 +101,7 @@ const DURATION = Object.assign({}, picker, {
   subtitle:"（" + convertTime(START_TIME.value,"7").replace("/","年").replace("/","月").concat("日") + "0点小组结束）",
   bindChangeFunction: "changeDuration",
   array:getArr(31,"天"),
-  default: "7天",
-  // value: "7天"
+  default: "7天"
 })
 
 const ALERT_TIME = Object.assign({}, picker, {

@@ -92,7 +92,7 @@ const FREQUENT_TIMES = Object.assign({}, picker, {
   bindChangeFunction: "changeFrequentTimes",
   array:getArr(6,"次"),
   default: "1次",
-  value: "1次"
+  // value: "1次"
 })
 
 const DURATION = Object.assign({}, picker, {
@@ -103,7 +103,7 @@ const DURATION = Object.assign({}, picker, {
   bindChangeFunction: "changeDuration",
   array:getArr(31,"天"),
   default: "7天",
-  value: "7天"
+  // value: "7天"
 })
 
 const ALERT_TIME = Object.assign({}, picker, {

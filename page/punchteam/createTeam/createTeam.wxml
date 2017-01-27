@@ -7,6 +7,19 @@
   <template is="input" data="{{...teamName}}"></template>
   <template is="textarea" data="{{...teamIntro}}"></template>
   <template is="picker" data="{{...teamCategory}}"></template>
+
+    
+      <view class="f-image">
+        <text class="f-image-name">小组封面</text>
+        <block wx:for="{{imageList}}" wx:for-item="image">
+          <image src="{{image}}" data-src="{{image}}" bindtap="previewImage"></image>
+        </block>
+        <view class="weui-uploader__input-box">
+          <view class="weui-uploader__input" bindtap="chooseImage"></view>
+        </view>
+      </view>
+
+    
   <template is="textarea" data="{{...leaderIntro}}"></template>
   <template is="picker" data="{{...startTime}}"></template>
     <view class="selectors" bindtap="changeAmount">

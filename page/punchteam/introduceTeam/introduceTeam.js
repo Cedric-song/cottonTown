@@ -1,0 +1,10 @@
+// createTeam.js
+
+Page({
+  data: {
+
+  } 
+})
+
+
+

@@ -10,7 +10,7 @@
 
   <scroll-view scroll-y="true" bindscrolltoupper="upper" bindscrolltolower="lower" scroll-into-view="{{toView}}" scroll-top="400" class="hotActive">
     <block wx:for="{{listData}}" wx:key="{{item.activeid}}">
-      <view class="hotActive-item">
+      <view class="hotActive-item" bindtap="goto">
         <view class="hotActive-item-l">
           <image src="{{item.activeImageUrl}}"></image>
         </view>

@@ -116,5 +116,10 @@ Page({
   data: {
     toolbar: toolbar,
     listData: listData
+  },
+  goto (){
+    wx.navigateTo({
+      url: './introduceTeam/introduceTeam'
+    })
   }
 })

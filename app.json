@@ -4,6 +4,7 @@
 
         "page/punchteam/index",
         "page/punchteam/createTeam/createTeam",
+        "page/punchteam/introduceTeam/introduceTeam",
 
         "page/plaza/index",
         "page/self/index"

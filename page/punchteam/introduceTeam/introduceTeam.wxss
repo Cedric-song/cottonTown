@@ -1,0 +1,17 @@
+/* introduceTeam */
+
+.imgCnt {
+  width: 100%;
+  height:360rpx;
+}
+
+.imgCnt image {
+  height:180rpx;
+  margin-top: 90rpx;
+  width:50%;
+}
+
+.imgCnt .cnt {
+  display: inline-block;
+  width:50%;
+}

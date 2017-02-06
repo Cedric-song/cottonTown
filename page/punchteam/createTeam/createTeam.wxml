@@ -44,8 +44,8 @@
     <template is="picker" data="{{...duration}}"></template>
     <template is="picker" data="{{...alertTime}}"></template>
     <template is="input" data="{{...wechartId}}"></template>
-    <button type="primary" loading="{{loading}}" bindtap="submitForm">提交信息并创建小组</button>
-
+    <button type="primary" loading="{{loading}}" bindtap="submitForm">提交信息并创建小组</button>    
+  </view>
 
     <block wx:if="{{modal.show}}">
       <view class="modal-hide">
@@ -60,5 +60,3 @@
         
       </view>
     </block>
-    
-  </view>

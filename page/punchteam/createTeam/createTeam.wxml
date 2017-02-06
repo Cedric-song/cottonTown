@@ -25,13 +25,12 @@
     <view class="selectors" bindtap="changeAmount">
       <block wx:for="{{selectorBlock}}">
         <block wx:if="{{item.writable}}">
-          <view data-index="{{index}}" data-selected="{{item.selected}}" class="selector {{item.selected}}">{{item.amount}}
-            <input placeholder-style="color:#222;font-weight:550;" placeholder="自定义" />
+          <view id="selecte-{{index}}" data-index="{{index}}" data-selected="{{item.selected}}" class="selector {{item.selected}}" bindtap="editAmount">{{item.amount}}
           </view>
             
         </block>
         <block wx:else>
-          <view data-index="{{index}}" data-selected="{{item.selected}}" class="selector {{item.selected}}">{{item.amount}}
+          <view id="selecte-{{index}}" data-index="{{index}}" data-selected="{{item.selected}}" class="selector {{item.selected}}">{{item.amount}}
           </view>
         </block>
       </block>
@@ -46,4 +45,20 @@
     <template is="picker" data="{{...alertTime}}"></template>
     <template is="input" data="{{...wechartId}}"></template>
     <button type="primary" loading="{{loading}}" bindtap="submitForm">提交信息并创建小组</button>
+
+
+    <block wx:if="{{modal.show}}">
+      <view class="modal-hide">
+        <view class="modal-content">
+          <text class="modal-li">{{modal.title}}</text>
+          <input class="modal-li"type="digit" placeholder="{{modal.holderplace}}" auto-focus bindblur="setModalValue"/>
+          <view class="modal-li modal-toolbar">
+            <view bindtap="hideModal">取消</view>  
+            <view bindtap="modalSubmit">确定</view>  
+          </view>
+        </view>
+        
+      </view>
+    </block>
+    
   </view>

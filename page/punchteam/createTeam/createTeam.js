@@ -124,6 +124,12 @@ const WECHART_ID = Object.assign({}, input, {
 
 Page({
   data: {
+    modal:{
+      show:false,
+      title: "自定义金额",
+      holderplace: "请输入0-200之间的数字",
+      value:""
+    },
     imageList: [],
     sourceTypeIndex: 2,
     sourceType: ['拍照', '相册', '拍照或相册'],
@@ -169,7 +175,7 @@ Page({
         writable:false
       },
       {
-        amount:"_",
+        amount:"自定义",
         selected:"",
         writable:true
       }
@@ -223,6 +229,12 @@ Page({
   },
   changeAmount(e) {
 
+    if( e.target.id !== this.data.selectorBlock.length - 1 ){
+      this.setData({
+        ["selectorBlock[5].amount"]:"自定义"
+      })
+    }
+
     this.setData({
       ["selectorBlock[" + this.data.selectorBlockConfig.current_index + "].selected"]:""
     })
@@ -242,7 +254,6 @@ Page({
       sizeType: sizeType[this.data.sizeTypeIndex],
       count: this.data.count[this.data.countIndex],
       success: function (res) {
-        console.log(res)
         that.setData({
           imageList: res.tempFilePaths
         })
@@ -255,6 +266,44 @@ Page({
     wx.previewImage({
       current: current,
       urls: this.data.imageList
+    })
+  },
+  editAmount: function (){
+    this.setData({
+      "modal.show": true
+    })
+  },
+  modalSubmit: function (){
+    const value = this.data.modal.value
+    if( value > 200 || value < 0){
+      wx.showToast({
+        title: '输入的数值应在0-200之间',
+        icon: 'fail',
+        duration: 2000
+      })
+      return false
+    }
+
+    if(value !== ""){
+      this.setData({
+        "selectorBlock[5].amount": value
+      })
+    }
+    this.setData({
+      "modal.show": false
+    })
+    
+  },
+  setModalValue: function(e){
+    if(e.detail.value !== ""){
+      this.setData({
+        "modal.value": e.detail.value
+      })
+    } 
+  },
+  hideModal: function (){
+    this.setData({
+      "modal.show": false
     })
   }
 })

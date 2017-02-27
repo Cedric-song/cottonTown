@@ -2,16 +2,23 @@
 
 .imgCnt {
   width: 100%;
-  height:360rpx;
+  padding:20rpx;
+  display:flex;
+  box-sizing:border-box;
+  border-bottom:1px solid #d7d7d7;
 }
 
 .imgCnt image {
   height:180rpx;
-  margin-top: 90rpx;
-  width:50%;
+  width:300rpx;
 }
 
 .imgCnt .cnt {
   display: inline-block;
-  width:50%;
+  position:relative;
+  left:-30rpx;
+}
+
+.cnt , .img {
+	flex:1
 }

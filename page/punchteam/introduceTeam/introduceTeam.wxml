@@ -1,17 +1,20 @@
 <!--introduceteam-->
 <view class="container">
   <view class="imgCnt">
-    <image src="http://img02.tooopen.com/images/20150928/tooopen_sy_143912755726.jpg"></image>
+    <view class="img">
+      <image src="http://img02.tooopen.com/images/20150928/tooopen_sy_143912755726.jpg"></image>
+    </view>
+    
     <view class="cnt">
       <view>
-        <text>小组名称</text>
+        <text>早睡从今天开始 第二期</text>
       </view>
       <view>
-        <text>小组类别</text>
+        <text>个人发展</text>
       </view>
 
       <view>
-        <text>参加人数</text>
+        <text>142人参加</text>
       </view>
     </view>
   </view>
